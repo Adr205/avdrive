@@ -1,0 +1,13 @@
+<div class="container">
+    <form #frmRegister="ngForm" class="form" (ngSubmit)="onRegister(frmRegister)">
+        <h1>Sign Up</h1>
+        <div class="name">
+            <input class="input fname" type="text" name="fName" placeholder="Your Name" ngModel required>
+            <input class="input" type="text" name="lName" placeholder="Last Name" ngModel required>
+        </div>
+        <input class="input" type="text" name="email" placeholder="Email Address" ngModel required>
+        <input class="input" type="password" name="password" placeholder="Password" ngModel required>
+        <p class="login">Ya tienes cuenta? <a routerLink='/auth'>Inicia sesión</a></p>
+        <input class="submit" type="submit" value="Sign Up">
+    </form>
+</div>

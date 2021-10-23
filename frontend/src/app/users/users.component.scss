@@ -1,0 +1,172 @@
+.container {
+  height: 100%;
+}
+
+.add {
+  display: flex;
+  justify-content: space-between;
+  background-color: #dedede;
+  padding: 2rem;
+  button {
+    background-color: transparent;
+    border: none;
+    img {
+      width: 2.5rem;
+      padding: 0.5rem;
+    }
+    margin-right: 2rem;
+
+    &:hover {
+      background-color: #bbb;
+      border-radius: 1.5rem;
+    }
+  }
+}
+
+@media (min-width: 850px) {
+  .add {
+    margin-left: 15rem;
+    width: 80%;
+  }
+}
+
+@media (min-width: 950px) {
+  .add {
+    width: 85%;
+    button {
+      margin-right: 5rem;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .add {
+    width: 90%;
+    button {
+      margin-right: 8rem;
+    }
+  }
+}
+
+@media (max-width: 394px) {
+  tr {
+    td {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.users-info {
+  margin-top: 2rem;
+  text-align: center;
+  width: 100%;
+
+  .table-titles {
+    font-size: 1.2rem;
+  }
+
+  .user-info {
+    button {
+      background-color: transparent;
+      border: none;
+      &:first-child {
+        margin-right: 1rem;
+      }
+      img {
+        padding: 0.4rem;
+        width: 2rem;
+        border-radius: 1.5rem;
+      }
+      .edit:hover {
+        background-color: #ffbf10;
+      }
+      .erase:hover {
+        background-color: rgba(255, 58, 58, 0.808);
+      }
+    }
+  }
+}
+
+@media (min-width: 692px) {
+  .users-info {
+    tr {
+      td {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 850px) {
+  .users-info {
+    margin-left: 15rem;
+    width: 80%;
+    tr {
+      td {
+        font-size: 2rem;
+      }
+    }
+    .table-titles {
+      font-size: 2rem;
+    }
+
+    .user-info {
+      font-size: 1.7rem;
+      button {
+        img {
+          width: 3rem;
+        }
+      }
+    }
+  }
+}
+
+.searchb {
+  align-items: center;
+  margin: 1.3rem;
+  height: 2rem;
+  padding: 0.4rem;
+  border-radius: 40px;
+  background: #ddd;
+  width: 20rem;
+  display: flex;
+  float: right;
+
+  @media (min-width: 500px) {
+  }
+
+  form {
+    width: 100%;
+    input {
+      max-width: 90%;
+    }
+  }
+
+  .btn {
+    border-radius: 50%;
+    border: none;
+    background: none;
+    color: black;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: #bbb;
+    }
+  }
+  .text {
+    border: none;
+    background: none;
+    outline: none;
+    margin-left: 1rem;
+    color: black;
+    font-size: 16px;
+    transition: 0.6s;
+    line-height: 40px;
+    width: 364px !important;
+    font-family: "Poppins-Bold";
+  }
+}

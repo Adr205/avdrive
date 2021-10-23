@@ -1,0 +1,40 @@
+.image {
+  width: 100%;
+  img {
+    width: 30rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .image {
+    img {
+      width: 50rem;
+    }
+  }
+}
+
+
+
+@media (min-width: 1000px) {
+  .image {
+    img {
+      width: 70rem;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .image {
+    img {
+      width: 90rem;
+    }
+  }
+}
+
+@media (min-width: 1600px) {
+  .image {
+    img {
+      width: 120rem;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<div class="container">
+    <form [formGroup]="myForm" (ngSubmit)="submit()">
+        <div class="form-group">
+            <p for="file">Upload up to 10 files</p>
+            <div class="box-input">
+                <label >
+                    <img class="drag-icon" src="../../assets/upload.svg" /> <br>
+                    <input formControlName="file" id="file" type="file" multiple class="form-control"
+                        (change)="onFileChange($event)">
+                </label>
+            </div>
+            <div *ngIf="f.file.touched && f.file.invalid" class="alert alert-danger">
+                <div *ngIf="f.file.errors && f.file.errors.required">File is required.</div>
+            </div>
+        </div>
+        <button class="btn" type="submit">Submit</button>
+
+    </form>
+</div>
+<app-aside></app-aside>

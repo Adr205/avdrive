@@ -1,0 +1,104 @@
+.container {
+  padding: 0 2rem 2rem 2rem;
+  form {
+    .in-cont {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 1rem;
+
+      p {
+        font-size: 1.2rem;
+      }
+      .missing {
+        border-bottom: 1px solid #f00;
+      }
+      .input {
+        padding: 0.5rem;
+        background-color: #bbb;
+        border-radius: 1rem;
+        border: none;
+      }
+    }
+
+    .ng-star-inserted {
+      .wrong {
+        border-bottom: 1px solid #f00;
+      }
+    }
+
+    .btn-cont {
+      justify-content: flex-end;
+      .btn {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 1rem;
+        background-color: #bbb;
+
+        &:first-child {
+          margin-right: 2rem;
+        }
+      }
+
+      .cancel {
+        &:hover {
+          background-color: #ff5757;
+        }
+      }
+
+      .confirm {
+        &:hover {
+          background-color: #61ff61;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 692px) {
+  form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    .in-cont {
+      p {
+        font-size: 1.4rem;
+      }
+      .input {
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 880px) {
+  .container {
+    form {
+      .in-cont {
+        p {
+          font-size: 2rem;
+        }
+        .input {
+          margin-bottom: 2rem;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 943px) {
+  .container {
+    form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      .in-cont {
+        display: block;
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
+h1 {
+  padding: 2rem 2rem 0 2rem;
+}

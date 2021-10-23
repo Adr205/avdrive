@@ -1,0 +1,61 @@
+html,
+body,
+app-root {
+  width: 100%;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #efefef;
+
+  .form {
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    input {
+      display: block;
+      margin-bottom: 2rem;
+    }
+
+    .input {
+      padding: 1rem;
+      border-radius: 2rem;
+      background-color: #cfcfcf;
+      border-style: none;
+      &:hover,
+      &:focus {
+        background-color: #aaa;
+      }
+    }
+
+    .submit {
+      padding: 0.8rem;
+      border-radius: 1.5rem;
+      background-color: #cfcfcf;
+      border: none;
+
+      &:hover {
+        background-color: #aaa;
+      }
+    }
+  }
+}
+
+.name {
+  @media (min-width: 850px) {
+    display: flex;
+
+    .fname {
+      margin-right: 2rem;
+    }
+  }
+}

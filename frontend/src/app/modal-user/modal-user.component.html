@@ -1,0 +1,40 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+
+<div class="container">
+    <form action="">
+        <div class="fname in-cont">
+            <p for="name">First Name:</p>
+            <input class="input missing" type="text" id="fName" name="fName" value={{data.fName}} placeholder="First Name" required>
+        </div>
+        <div class="lName in-cont">
+            <p for="lName">Last Name:</p>
+            <input class="input" type="text" id="lName" name="lName" value={{data.lName}} placeholder="Last Name">
+        </div>
+        <div class="email in-cont">
+            <p for="email">Email:</p>
+            <input class="input" type="email" id="email" name="email" value={{data.email}} placeholder="Email" required>
+        </div>
+        <div class="priv in-cont">
+            <p for="priv">Privilege:</p>
+            <input class="input" type="text" id="priv" name="priv" value={{data.priv}} placeholder="admin/user" required>
+        </div>
+
+        <div *ngIf="data.title == 'Add User'">
+            <div class=" in-cont">
+                <p for="name">Password:</p>
+                <input class="input" type="password" id="password" name="fName" placeholder="Password" required>
+            </div>
+
+            <div class=" in-cont">
+                <p for="name">Confirm Password:</p>
+                <input class="input" type="password" id="cpassword" name="fName" placeholder="Confirm Password" required>
+            </div>
+        </div>
+
+
+        <mat-dialog-actions class="btn-cont">
+            <button class="btn cancel" mat-button mat-dialog-close>Cancel</button>
+            <button class="btn confirm" (click)="updateUser(data.id, $event)" mat-button>Confirm</button>
+        </mat-dialog-actions>
+    </form>
+</div>

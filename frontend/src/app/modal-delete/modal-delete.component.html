@@ -1,0 +1,6 @@
+<h1 mat-dialog-title>{{data.title}} {{data.name}}</h1>
+
+<div class="container">
+    <button mat-button class="btn cancel" mat-dialog-close>Cancel</button>
+    <button mat-button class="btn confirm" (click)="deleteUser(data.id, $event)" >Confirm</button>
+</div>

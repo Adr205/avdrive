@@ -1,0 +1,62 @@
+<div class="container">
+
+    <div class="add">
+        <h1>Users</h1>
+        <button (click)="openModalAdd()"><img src="../../assets/icono_agregar.svg" alt=""></button>
+    </div>
+
+<div class="searchb">
+    <!-- <form (submit)="books.Search($event)"> -->
+    <form (input)='Search($event)'>
+        <input placeholder="Buscador" id="searchText" type="text" class="text">
+        <!-- <input (input)="usr.filter()" placeholder="Buscador" id="searchText" type="text" class="text">
+            <button class="btn" (click)="usr.filter()">
+                <i class="fa fa-search "></i>
+            </button> -->
+    </form>
+</div>
+
+    <table class="users-info">
+        <tr class="table-titles">
+            <th class="title">Name</th>
+            <th class="title">Email</th>
+            <th class="title">Privilege</th>
+            <th class="title">Created</th>
+            <th class="title"></th>
+        </tr>
+        <tr *ngFor="let usr of users" class="user-info">
+            <td>{{usr.fName}} {{usr.lName}}</td>
+            <td>{{usr.email}}</td>
+            <td>{{usr.priv}}</td>
+            <td>{{usr.createdAt}}</td>
+            <td class="actions">
+                <button mat-button (click)=openModal(this.usr)><img class="edit" src="../../assets/user-edit.svg"
+                        alt="Edit-User"></button>
+                <button mat-button (click)=openModalDelete(this.usr)><img class="erase" src="../../assets/trash-2.svg"
+                        alt="Erase-User"></button>
+            </td>
+        </tr>
+
+        <!-- <tr class="user-info">
+        <td>Nadia Chacón</td>
+        <td>Bellamusa@live.com</td>
+        <td>User</td>
+        <td>10/21/2021</td>
+        <td>
+            <button><img class="edit" src="../../assets/user-edit.svg" alt="Edit-User"></button>
+            <button><img class="erase" src="../../assets/trash-2.svg" alt="Erase-User"></button>
+        </td>
+    </tr>
+    <tr class="user-info">
+        <td>Julia Salinas</td>
+        <td>Julyjunki@gmail.com</td>
+        <td>User</td>
+        <td>12/02/2021</td>
+        <td>
+            <button><img class="edit" src="../../assets/user-edit.svg" alt="Edit-User"></button>
+            <button><img class="erase" src="../../assets/trash-2.svg" alt="Erase-User"></button>
+        </td>
+    </tr> -->
+    </table>
+</div>
+<app-aside></app-aside>

@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="aside">
+    <div class="nav">
+        <ul>
+            <li routerLink="/mydrive"><a  (click)='getPriv()' class="nav-item">
+                    <img src="../../assets/folder.svg" alt="">
+                    <p>Gallery</p>
+                </a></li>
+            <li class="noDisp" id="usersLI" routerLink="/users"><a (onload)='getPriv()' class="nav-item ">
+                    <img src="../../assets/user.svg" alt="">
+                    <p>Users</p>
+                </a></li>
+            <li routerLink="/upload"><a (click)='getPriv()' class="nav-item">
+                    <img src="../../assets/upload.svg" alt="">
+                    <p>Upload</p>
+                </a></li>
+            <li (click)="onLogOut()"><a (click)='getPriv()' class="nav-item">
+                    <img src="../../assets/exit.svg" alt="">
+                    <p>Logout</p>
+                </a></li>
+        </ul>
+    </div>
+</div>

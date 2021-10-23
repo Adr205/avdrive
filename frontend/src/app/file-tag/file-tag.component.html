@@ -1,0 +1,83 @@
+<div class="box">
+
+    <div class="container-nav">
+        <div class="nav-view">
+            <button (click)='getFilesTags()' class="btn">All Files</button>
+            <button (click)='getPhotos()' class="btn">Photos</button>
+            <button (click)='getFiles()' class="btn">Files</button>
+            <button (click)='getMyFiles()' class="btn">My Files</button>
+        </div>
+    </div>
+
+
+    <div class="flex">
+        <div class="grid">
+            <div *ngFor="let file of files" class="container">
+                <div class="file-container">
+                    <img *ngIf="file.format == 'pdf' || file.format == 'PDF'; else DOCX" src={{pdf}} alt="PDF">
+                    <ng-template #DOCX>
+                        <div
+                            *ngIf="file.format == 'docx' || file.format == 'DOCX' || file.format == 'doc' || file.format == 'DOC'; else XSLX">
+                            <a href={{file.img}} download="">
+                                <img src={{word}} alt="DOCX">
+                                <p>{{file.originalName}}</p>
+                            </a>
+                        </div>
+
+                    </ng-template>
+
+                    <ng-template #XSLX>
+                        <div
+                            *ngIf="file.format == 'xlsx' || file.format == 'XLSX' || file.format == 'xls' || file.format == 'XLS'; else CSV">
+                            <a href={{file.img}} download="">
+                                <img src={{excel}} alt="XLSX">
+                                <p>{{file.originalName}}</p>
+                            </a>
+                        </div>
+                    </ng-template>
+
+                    <ng-template #CSV>
+                        <div *ngIf="file.format == 'csv' || file.format == 'CSV'; else SVG">
+                            <a href={{file.img}} download="">
+                                <img src={{csv}} alt="CSV">
+                                <p>{{file.originalName}}</p>
+                            </a>
+                        </div>
+                    </ng-template>
+
+                    <ng-template #SVG>
+                        <div *ngIf="file.format == 'svg' || file.format == 'SVG'; else PPT">
+                            <a href={{file.img}} download="">
+                                <!-- <img src={{svg}} alt="PDF"> -->
+                                <img src={{file.img}} alt="SVG">
+                                <p>{{file.originalName}}</p>
+                            </a>
+                        </div>
+                    </ng-template>
+
+                    <ng-template #PPT>
+                        <div
+                            *ngIf="file.format == 'pptx' || file.format == 'PPTX' || file.format == 'ppt' || file.format == 'PPT'; else IMG">
+                            <a href={{file.img}} download="">
+                                <img src={{ppt}} alt="PPT">
+                                <p>{{file.originalName}}</p>
+                            </a>
+                        </div>
+                    </ng-template>
+
+                    <ng-template #IMG>
+                        <button (click)='openModalPhoto(this.file.img,this.file.originalName)'>
+                            <img src={{file.thumbnail}} alt="img-thumbnail">
+                        </button>
+                    </ng-template>
+
+                    <div class="file-info">
+                        <p class="creator">{{file.user}}</p>
+                        <p class="file-date">{{file.createdAt}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-aside></app-aside>
