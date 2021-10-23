@@ -53,10 +53,12 @@ export class DragDropComponent implements OnInit {
 
     // console.log('GET ALL');
     // console.log(formData.getAll('files'));
-    const headers = {'Access-Control-Allow-Origin': '*'};
+    const headers = {
+      'Access-Control-Allow-Origin': '*',
+    };
 
     this.http
-      .post('https://casa-labra.com/api/upload', formData, {headers:headers})
+      .post('https://casa-labra.com/api/upload', formData)
       .subscribe((res) => {
         // console.log(res);
         this.myFiles = [];

@@ -22,10 +22,6 @@
 }
 
 .grid {
-  height: 100%;
-}
-
-.grid {
   //   display: grid;
   //   grid-template-columns: repeat(1, 1fr);
   display: flex;
@@ -36,7 +32,7 @@
   background-color: #afafaf;
   padding-top: 3rem;
   width: 100%;
-  padding-bottom: 13rem;
+  padding-bottom: 0rem;
   .container {
     display: flex;
     margin-bottom: 2rem;
@@ -161,4 +157,32 @@
 
 .mat-dialog-container {
   padding: 0px !important;
+}
+
+.pages{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: 0rem 0 12rem 0;
+  background-color: #afafaf;
+  p{
+    margin: 0 1.5rem;
+    border: 1px solid black;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  button{
+    background-color: #787878;
+    border: none;
+    border-radius: 0.4rem;
+    img{
+      width: 3rem;
+    }
+
+    &:hover, &:focus{
+      background-color: #236cf3;
+    }
+  }
+
 }

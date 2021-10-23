@@ -1,4 +1,4 @@
-<div class="box">
+<div class="box" id="top">
 
     <div class="container-nav">
         <div class="nav-view">
@@ -10,11 +10,19 @@
     </div>
 
 
-    <div class="flex">
+    <div class="flex" >
         <div class="grid">
             <div *ngFor="let file of files" class="container">
                 <div class="file-container">
-                    <img *ngIf="file.format == 'pdf' || file.format == 'PDF'; else DOCX" src={{pdf}} alt="PDF">
+                    <div
+                        *ngIf="file.format == 'pdf' || file.format == 'PDF'; else DOCX">
+                        <a href={{file.img}}  target="_blank" download>
+                            <img src={{pdf}} alt="PDF">
+                            <p>{{file.originalName}}</p>
+                        </a>
+                    </div>
+
+                    <!-- <img *ngIf="file.format == 'pdf' || file.format == 'PDF'; else DOCX" src={{pdf}} alt="PDF"> -->
                     <ng-template #DOCX>
                         <div
                             *ngIf="file.format == 'docx' || file.format == 'DOCX' || file.format == 'doc' || file.format == 'DOC'; else XSLX">
@@ -47,9 +55,9 @@
 
                     <ng-template #SVG>
                         <div *ngIf="file.format == 'svg' || file.format == 'SVG'; else PPT">
-                            <a href={{file.img}} download="">
-                                <!-- <img src={{svg}} alt="PDF"> -->
-                                <img src={{file.img}} alt="SVG">
+                            <a href={{file.img}}  target="_blank" download>
+                                <img src={{svg}} alt="SVG">
+                                <!-- <img src={{file.img}} alt="SVG"> -->
                                 <p>{{file.originalName}}</p>
                             </a>
                         </div>
@@ -57,9 +65,19 @@
 
                     <ng-template #PPT>
                         <div
-                            *ngIf="file.format == 'pptx' || file.format == 'PPTX' || file.format == 'ppt' || file.format == 'PPT'; else IMG">
+                            *ngIf="file.format == 'pptx' || file.format == 'PPTX' || file.format == 'ppt' || file.format == 'PPT'; else ZIP">
                             <a href={{file.img}} download="">
                                 <img src={{ppt}} alt="PPT">
+                                <p>{{file.originalName}}</p>
+                            </a>
+                        </div>
+                    </ng-template>
+
+                    <ng-template #ZIP>
+                        <div
+                            *ngIf="file.format == 'zip' || file.format == 'ZIP'; else IMG">
+                            <a href={{file.img}} download="">
+                                <img src={{zip}} alt="zip">
                                 <p>{{file.originalName}}</p>
                             </a>
                         </div>
@@ -78,6 +96,17 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="pages">
+        <button (click)="previousPage()">
+            <img src="../../assets/before.svg" alt="go-previous">
+        </button>
+    
+        <p>{{currentPage}}</p>
+    
+        <button (click)="nextPage()">
+            <img src="../../assets/next.svg" alt="go-next">
+        </button>
     </div>
 </div>
 <app-aside></app-aside>

@@ -123,7 +123,7 @@ export class ModalUserComponent implements OnInit {
           document
             .getElementById('priv')
             ?.setAttribute('style', 'border-bottom: 1px solid red');
-          console.log('Esta vacia');
+          // console.log('Esta vacia');
         } else if (this.priv != 'admin' && this.priv != 'user') {
           document
             .getElementById('priv')
